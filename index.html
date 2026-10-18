@@ -48,8 +48,12 @@ p{margin:0}
 .links{display:flex;gap:2px;flex-wrap:wrap}
 .links a{color:var(--muted);font-weight:600;font-size:14px;padding:8px 12px;border-radius:10px}
 .links a:hover{color:var(--ink);background:var(--glass)}
-.nav-cta{font:600 14px/1 var(--body);color:#121A2C;background:var(--ink);padding:11px 14px;border-radius:11px}
-.nav-cta:hover{background:var(--rose)}
+.nav-cta{position:relative;display:inline-flex;align-items:center;gap:8px;font:700 14.5px/1 var(--body);color:#121A2C;background:linear-gradient(135deg,#FFC9A3,var(--rose));padding:11px 16px;border-radius:12px;box-shadow:0 0 0 1px rgba(245,174,136,.5),0 8px 24px -6px rgba(245,174,136,.65);transition:transform .15s,box-shadow .15s}
+.nav-cta .ico{width:16px;height:16px;fill:#121A2C}
+.nav-cta::after{content:"";position:absolute;inset:-4px;border-radius:15px;border:2px solid rgba(245,174,136,.55);animation:ring 2.4s ease-out infinite;pointer-events:none}
+@keyframes ring{0%{opacity:.9;transform:scale(.96)}70%,100%{opacity:0;transform:scale(1.12)}}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(245,174,136,.7),0 12px 30px -6px rgba(245,174,136,.8)}
+.btn .ico{width:18px;height:18px;fill:currentColor;flex:none}
 
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:56px 72px;min-height:min(760px,92vh)}
@@ -264,7 +268,7 @@ blockquote{margin:8px 0;padding:18px 22px;border-left:3px solid var(--mint);back
     <nav class="links" aria-label="Sections">
       <a href="#about">About</a><a href="#toolkit">Toolkit</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#resume">Résumé</a><a href="#blog">Blog</a>
     </nav>
-    <a class="nav-cta" href="#contact">Say hi</a>
+    <a class="nav-cta" href="#contact"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2 .9v.3l8 5.3 8-5.3v-.3H4zm16 2.7-7.45 4.94a1 1 0 0 1-1.1 0L4 9.1V18h16V9.1z"/></svg>Say hi</a>
   </div>
 </header>
 
@@ -278,8 +282,8 @@ blockquote{margin:8px 0;padding:18px 22px;border-left:3px solid var(--mint);back
       <p class="sub">I build machine learning projects that check their own fairness, and I've spent years teaching people how code works.</p>
       <div class="ctas">
         <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn" href="https://www.linkedin.com/in/asthrameadipudi" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a class="btn" href="https://github.com/asthram08" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/asthrameadipudi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/asthram08" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>GitHub</a>
       </div>
     </div>
     <div class="stage" id="stage">
@@ -306,9 +310,9 @@ blockquote{margin:8px 0;padding:18px 22px;border-left:3px solid var(--mint);back
     <h2 class="depth">Hi there!</h2>
     <div class="about">
       <div class="bio">
-        <p>I'm a student at San José State University who loves technology, innovation, and <strong>human-centered design</strong>. I'm especially drawn to machine learning and responsible AI, and I want to build technology that is fair, ethical, and actually helps people.</p>
-        <p>I learned to explain hard ideas by teaching them. I spent four and a half years as a Code Sensei at Code Ninjas, and in summer 2025 I was a teaching assistant for a college-level data science course at UC Berkeley's ATDP.</p>
-        <p>Outside of tech, I love meeting new people, exploring new places, and trying new things. I speak English, Telugu, and Spanish.</p>
+        <p>I'm a student at San José State University focused on <strong>software engineering for machine learning and AI</strong>. I like building things end to end: cleaning the data, training and testing the model, and shipping it as an app people can actually use.</p>
+        <p>My latest project predicts student dropout risk with scikit-learn and Keras, audits the model for fairness with Fairlearn and SHAP, and runs as a live Streamlit app. I also write SQL in DuckDB to turn raw event data into product metrics. I care most about AI that is reliable, fair, and easy to explain.</p>
+        <p>Before college, I spent four and a half years teaching kids to code in JavaScript, C#, and Godot at Code Ninjas, and I helped run a college-level machine learning course at UC Berkeley's ATDP. Teaching made me better at writing clear code and explaining hard ideas simply. I speak English, Telugu, and Spanish.</p>
       </div>
       <div class="card tilt depth">
         <div class="lift">
@@ -533,8 +537,8 @@ blockquote{margin:8px 0;padding:18px 22px;border-left:3px solid var(--mint);back
     <p>I'm looking for Summer 2027 internships in data science and AI. I'd love to hear about what you're working on.</p>
     <div class="mail"><span id="email">ameadipudi@gmail.com</span><button class="copy" id="copyBtn" type="button">Copy email</button></div>
     <div class="ctas">
-      <a class="btn" href="https://www.linkedin.com/in/asthrameadipudi" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a class="btn" href="https://github.com/asthram08" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/asthrameadipudi" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/asthram08" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>GitHub</a>
     </div>
   </section>
 </main>
